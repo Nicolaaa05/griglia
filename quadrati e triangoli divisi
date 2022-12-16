@@ -1,0 +1,62 @@
+w=400
+h=400
+n=10
+x = 0
+y = 0
+l = w/n
+
+function setup() {
+  createCanvas(w, h);
+    
+  noStroke()
+}
+
+function draw() {
+  let r = random()
+  console.log(r)
+  if(r<0.5){
+    square1(x,y, l)
+  }else{
+    square3(x,y, l)
+  }
+  
+  
+  
+  x=x+l
+  if(x>=w){
+    x=0
+    y=y+l
+  }
+
+}
+
+
+function square1(a, b, c){
+  fill("white")
+  rect(a, b, c/2, c)
+  fill("black")
+  rect(a+ c/2, b, c/2, c)
+}
+
+
+function square2(a, b, c){
+  fill("black")
+  rect(a, b, c/2, c)
+  fill("white")
+  rect(a+ c/2, b, c/2, c)
+}
+
+function square3(a, b, c){
+  fill("white")
+  rect(a, b, c, c/2)
+  fill("black")
+  rect(a, b + c/2, c, c/2)
+  fill("black")
+  triangle(a, b+ c/2, a + c/2, b, a+ c, b+ c/2)
+  fill("white")
+  triangle(a, b+ c/2, a + c/2, b+c, a + c, b+ c/2)
+}
+
+
+
+
